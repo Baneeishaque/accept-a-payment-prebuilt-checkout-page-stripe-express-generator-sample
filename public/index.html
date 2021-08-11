@@ -1,15 +1,43 @@
+<!DOCTYPE html>
 <!--suppress HtmlRequiredLangAttribute -->
 <html>
-
 <head>
-    <title>Express</title>
-    <!--suppress HtmlUnknownTarget -->
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <title>Stripe Checkout Sample</title>
+
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="stylesheets/normalize.css" rel="stylesheet"/>
+    <link href="stylesheets/global.css" rel="stylesheet"/>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
 <body>
-<h1>Express</h1>
-<p>Welcome to Express</p>
-</body>
+<div class="sr-root">
+    <div class="sr-main">
+        <section class="container">
+            <div>
+                <h1>Single photo</h1>
+                <h4>Purchase a Pasha original photo</h4>
+                <div class="pasha-image">
+                    <!--suppress HtmlRequiredAltAttribute -->
+                    <img
+                            height="160"
+                            src="https://picsum.photos/280/320?random=4"
+                            width="140"
+                    />
+                </div>
+            </div>
 
+            <!--suppress HtmlUnknownTarget -->
+            <form action="/create-checkout-session" method="POST">
+                <button id="submit">Buy</button>
+            </form>
+        </section>
+
+        <div id="error-message"></div>
+    </div>
+</div>
+</body>
 </html>
